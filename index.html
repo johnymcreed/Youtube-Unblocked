@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<HTML LANG="EN">
+  
+  <HEAD>
+    <TITLE> Unblocked Youtube </TITLE>
+    <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width">
+    
+    <SCRIPT>
+      const base = "https://www.youtube-nocookie.com/embed/";
+      const end = "?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light";
+      const strip_timestamps = /\?t=\d+/;
+      var submit = document.getElementById('submit');
+      var download = document.getElementById('download');
+      var url = document.getElementById('url');
+      var video_holder;
+      var video_holder_holder = document.getElementById('video-holder-holder');
+      var link;
+      var id;
+      submit.onclick = () => {
+        link = url.value;
+        id = link.replace(strip_timestamps, "");
+        id = id.substr(id.length - 11, 11);
+        video_holder = document.getElementById('video-holder').cloneNode(true);
+        video_holder.style.display = 'block';
+        video_holder.children[1].src = base + id + end;
+        video_holder_holder.appendChild(video_holder);
+      }
+    </SCRIPT>
+    
+    <!-- NAVIGATION -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary container">
+      <div class="container-fluid">
+        <span class="navbar-brand" style="border-right:none;"> <i style="color:red;" class="fa-brands fa-youtube"></i> Youtube </span>
+        
+         <center>
+          <input id="url" style="width:50rem; opacity: .50;" type="text" placeholder=" add a youtube.com link here " required>
+          <button id="submit" style="opacity: .50; color:black;">Unblock</button>
+         </center>
+        
+        <!-- ICON SHARING VIA FONT AWESOME -->
+        <span class="navbar-brand" style="border-right:none;">  
+          <a style="color:green;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Go to our github page" href="#"><i class="fa-brands fa-github"></i></a> 
+          <a style="color:yellow;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="People found this project funny."><i class="fa-solid fa-face-grin-tears"></i></a>
+        </span>
+      </div>
+    </nav>
+  </HEAD>
+  <BODY>
+    <!-- INFORMATION ABOUT THIS -->
+    <div class="container bg-primary" style="background:black; width:100rem; opacity:.50; padding:30px; border:0.1px solid black; border-top:none">
+      <div class="alert alert-dismissible alert-danger">
+        Shoot.. this be out of date lol. guess its not going to work with me. so we have disabled this.
+      </div>
+       <div style="color:white;">
+         <span>
+           <h1>Information <a data-bs-toggle="tooltip" data-bs-placement="bottom" title="Quick info on this website">(<i class="fa-solid fa-question"></i>)</a></h1>
+           This is a youtube unblocker that is unreasonablly more simple than it should honestly be, which includes an automatic unblocking system using javascript and also a free iframe view of the video via this website. <i> Note that sometimes this can fail </i>
+           <hr>
+            <center>
+              <div id="video-holder-holder" >
+                 <div id="video-holder" style="display:none;" class="center">
+                   <iframe id="video" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?wmode=transparent&amp;iv_load_policy=3&amp;autoplay=0&amp;html5=1&amp;showinfo=0&amp;rel=0&amp;modestbranding=1&amp;playsinline=0&amp;theme=light" 
+                           frameborder="0" 
+                           width="100%"
+                           height="650rem;"
+                           scrolling="no">
+                   </iframe>
+                 </div>
+              </div>
+              <br> 
+              <footer style="position:absolute; bottom:1;">
+                &copy; Imortal-wiso 2022
+              </footer>
+            </center>
+         </span>
+       </div>
+    </div>
+  </BODY>
+  
+  <!-- TOOLTIPING EXAMPLE
+    <a data-bs-toggle="tooltip" data-bs-placement="bottom" title="A Question Tooltip">(<i class="fa-solid fa-question"></i>)</a>
+  -->
+ 
+  <!-- FETCH BOOSTRAP/BOOTSWATCH & FONT AWESOME -->
+  <LINK rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <SCRIPT src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></SCRIPT>
+  <SCRIPT src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></SCRIPT>
+  <SCRIPT src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></SCRIPT>
+  <LINK rel="stylesheet" href="https://bootswatch.com/5/slate/bootstrap.css">
+  
+</HTML>
